@@ -1,2 +1,17 @@
-<%= todo.content %>
-posted <%= time_ago_in_words(todo.created_at) %> ago
+<div class="col-sm-4">
+  <div class="card" style="width: 20rem; height: 20rem">
+    <div class="card-body">
+      <h5 class="card-title"><%= todo.title %></h5>
+      <h6 class="card-subtitle mb-2 text-muted">created <%= time_ago_in_words(todo.created_at) %> ago</h6>
+        <% if todo.done %>
+          <span class="label label-pill label-success">finished</span>
+        <% else %>
+          <span class="label label-pill label-danger">pending</span>
+        <% end %>
+      <p class="card-text"><%= todo.content %></p>
+      <%= link_to "edit" , edit_todo_path(todo), :class => "card-link" %>
+      <%= link_to "done" , task_completed_todo_path(todo.id), method: :patch %>
+      <%= link_to "remove" , todo ,  method: :delete , :class => "card-link" , data: { confirm: "are you sure?" } %>
+    </div>
+  </div>
+</div>

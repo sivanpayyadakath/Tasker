@@ -1,9 +1,5 @@
-
-<ul>
-  <% @todos.each do |todo|%>
-  <li>
-    <%= render todo %>
-  </li>
-  <% end %>
-</ul>
-
+<div class="container">
+   <% @todos.each do |todo|%>
+     <%= render todo %>
+   <% end %>
+</div>

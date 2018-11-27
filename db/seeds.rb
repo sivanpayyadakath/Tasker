@@ -8,6 +8,7 @@
 
 10.times do
   Todo.create!(
+      title: Faker::Commerce.product_name,
       content: Faker::Lorem.sentence(5)
   )
 end
