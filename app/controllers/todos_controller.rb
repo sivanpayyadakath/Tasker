@@ -45,8 +45,6 @@ class TodosController < ApplicationController
     puts @todo = Todo.find(params[:id])
     if @todo.update_attribute(:done, true)
     redirect_to todos_path
-    else
-      puts "hello"
     end
   end
 
