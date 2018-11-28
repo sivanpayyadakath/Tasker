@@ -9,8 +9,8 @@
           <span class="label label-pill label-danger">pending</span>
         <% end %>
       <p class="card-text"><%= todo.content %></p>
-      <%= link_to "edit" , edit_todo_path(todo), :class => "card-link" %>
-      <%= link_to "done" , task_completed_todo_path(todo.id), method: :patch %>
+      <% if !todo.done %><%= link_to "edit" , edit_todo_path(todo), :class => "card-link" %>
+      <%= link_to "done" , task_completed_todo_path(todo.id), method: :patch %><% end %>
       <%= link_to "remove" , todo ,  method: :delete , :class => "card-link" , data: { confirm: "are you sure?" } %>
     </div>
   </div>

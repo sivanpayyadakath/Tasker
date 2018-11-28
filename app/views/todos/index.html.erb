@@ -1,4 +1,24 @@
+
+<h1> <%= t('.title') %></h1>
+
 <div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-md-6">
+      <p> sort by
+        <%= link_to "default", todos_path(order: 'all') %>
+        <%= link_to "orderbycreated", todos_path(order: 'created')%>
+        <%#= link_to "orderbytitle", todos_path(order: 'title')%>
+      </p>
+    </div>
+    <div>
+
+      <% if I18n.locale == I18n.default_locale %>
+        <%= link_to "Japanese", { :locale=>'ja'} %>
+      <% else %>
+        <%= link_to "English", { :locale=>'en' } %>
+      <% end %>
+    </div>
+  </div>
   <% @todos.each do |todo|%>
      <%= render todo %>
    <% end %>

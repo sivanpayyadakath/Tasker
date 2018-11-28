@@ -10,13 +10,18 @@ class TodosController < ApplicationController
       flash[:success] = "new task  created"
       redirect_to todos_path
     else
-      flash[:danger] = "not created"
-      redirect_to todos_path
+      render 'new'
     end
   end
 
   def index
-    @todos = Todo.all
+    if params[:order] == 'created'
+      @todos = Todo.all.order("created_at")
+    elsif params[:order] == 'all'
+      @todos = Todo.all.order("created_at DESC ")
+    else
+      @todos = Todo.all.order("created_at DESC")
+    end
   end
 
   def edit

@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'faker',          '1.7.3'
 gem 'jquery-rails', '4.3.1'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'rails-i18n'
 # gem 'sass-rails', '>= 3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -42,6 +43,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :development do
