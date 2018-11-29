@@ -12,8 +12,13 @@
     </div>
     <div>
 
+      <%= form_tag(todos_path, method: :get) do %>
+        <%= text_field_tag :search, params[:search]%>
+        <%= submit_tag 'Search' %>
+      <% end %>
+
       <% if I18n.locale == I18n.default_locale %>
-        <%= link_to "Japanese", { :locale=>'ja'} %>
+        <%= link_to "日本語", { :locale=>'ja'} %>
       <% else %>
         <%= link_to "English", { :locale=>'en' } %>
       <% end %>
