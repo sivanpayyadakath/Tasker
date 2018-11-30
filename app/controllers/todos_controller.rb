@@ -10,15 +10,26 @@ class TodosController < ApplicationController
       flash[:success] = "new task  created"
       redirect_to todos_path
     else
-      flash[:danger] = "not created"
-      redirect_to todos_path
+      render 'new'
     end
   end
 
   def index
-    @todos = Todo.all
-  end
+    if params[:order] == 'created'
+      @todos = Todo.reorder("created_at ASC")
+    else
+      @todos = Todo.all
+    end
 
+   #      if params[:search]
+   #      @todos = Todo.search(params[:search])
+   #      else
+   #      @todos = Todo.all
+   #      end
+   #      end
+  
+ end
+  
   def edit
     @todo = Todo.find(params[:id])
   end
@@ -44,13 +55,25 @@ class TodosController < ApplicationController
   def task_completed
     puts @todo = Todo.find(params[:id])
     if @todo.update_attribute(:done, true)
-    redirect_to todos_path
+      redirect_to todos_path
+    end
+  end
+
+  def self.search(search)
+    if search
+      t = Todo.find_by(title: search)
+      if t
+      else
+        Todo.all
+      end
+    else
+      Todo.all
     end
   end
 
 private
   def todo_params
-    params.require(:todo).permit(:content, :title)
+    params.require(:todo).permit(:content, :title, :search)
   end
 end
 
