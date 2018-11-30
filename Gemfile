@@ -33,6 +33,7 @@ gem 'faker',          '1.7.3'
 gem 'jquery-rails', '4.3.1'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'rails-i18n'
+gem 'bootstrap-datepicker-rails', '>= 0.6.21'
 # gem 'sass-rails', '>= 3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

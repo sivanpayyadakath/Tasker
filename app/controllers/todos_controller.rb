@@ -15,21 +15,33 @@ class TodosController < ApplicationController
   end
 
   def index
-    if params[:order] == 'created'
-      @todos = Todo.reorder("created_at ASC")
-    else
-      @todos = Todo.all
-    end
 
-   #      if params[:search]
-   #      @todos = Todo.search(params[:search])
-   #      else
-   #      @todos = Todo.all
-   #      end
-   #      end
-  
- end
-  
+    if params[:search]
+      @todos = Todo.search(params[:search])
+    else
+      if params[:order] == 'created'
+      @todos = Todo.reorder("created_at ASC")
+      elsif params[:order] == 'deadline'
+      @todos = Todo.reorder("deadline_at ASC")
+      else
+      @todos = Todo.all
+      end
+    end
+    # @todos.each do |todo|
+    #   next if todo.deadline_at.nil? && !todo.done
+    #   if todo.deadline_at.to_i < Time.now.to_i
+    #     p todo.deadline_at
+    #     todo.update_attribute(:status, 'pending')
+    #     todo.save
+    #   end
+    # end
+
+  end
+
+
+
+
+
   def edit
     @todo = Todo.find(params[:id])
   end
@@ -55,25 +67,25 @@ class TodosController < ApplicationController
   def task_completed
     puts @todo = Todo.find(params[:id])
     if @todo.update_attribute(:done, true)
+      @todo.update_attribute(:completed_at, Time.now)
+      @todo.update_attribute(:status, 'completed')
       redirect_to todos_path
     end
   end
 
-  def self.search(search)
-    if search
-      t = Todo.find_by(title: search)
-      if t
-      else
-        Todo.all
-      end
-    else
-      Todo.all
+  def task_started
+    puts @todo = Todo.find(params[:id])
+    if @todo.update_attribute(:status, 'underway')
+      # @todo.update_attribute(:started_at, Time.now)
+      redirect_to todos_path
     end
   end
 
+
 private
   def todo_params
-    params.require(:todo).permit(:content, :title, :search)
+    params.require(:todo).permit(:content, :title, :deadline_at, :status, :search)
   end
+
 end
 

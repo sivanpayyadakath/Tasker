@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :todos do
     member do
       patch :task_completed
+      patch :task_started
     end
   end
  root 'todos#index'

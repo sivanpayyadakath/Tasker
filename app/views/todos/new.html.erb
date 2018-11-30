@@ -5,5 +5,8 @@
   <%= f.label :content %>
   <%= f.text_area :content , placeholder: "new task" %>
   <%= render 'shared/error_messages' , object:@todo %>
+  <%= f.label :deadline_at %>
+  <%= f.text_field :deadline_at , "data-provide" => 'datepicker', data: { date_format: 'yyyy/mm/dd' } %>
+  <%= f.hidden_field :status, :value => 'not started' %>
   <%= f.submit "post" %>
 <% end %>
