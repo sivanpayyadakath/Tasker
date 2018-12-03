@@ -47,6 +47,7 @@
 
 
 
+
 .label-not.started{
   color: blueviolet;
 }
@@ -57,4 +58,54 @@
 
 .label-completed{
   color: green;
+}
+
+.badge-3{
+  background-color: green;
+}
+.badge-2{
+  background-color: blue;
+}
+
+.badge-1{
+  background-color: red;
+}
+
+.navbar {
+  .navbar {
+    position: relative;
+  }
+  .brand {
+    position: absolute;
+    left: 40%;
+    //margin-left: -50px !important;  /* 50% of your logo width */
+    display: block;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 4em;
+    margin: auto;
+  }
+  ul {
+    li {
+      list-style: none;
+      margin: 10px 20px 0px 20px;
+    }
+  }
+
+  form {
+    float: right;
+    margin-top: 10px;
+  }
+}
+  .paginate-style{
+    align-items: center;
+  }
+
+
+
+footer{
+  color: #BBBBBB;
+  p{
+    float: right;
+    margin: 10px 20px;
+  }
 }

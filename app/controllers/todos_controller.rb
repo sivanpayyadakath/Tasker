@@ -7,7 +7,7 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(todo_params)
     if @todo.save
-      flash[:success] = "new task  created"
+      flash[:success] = 'new task  created'
       redirect_to todos_path
     else
       render 'new'
@@ -15,32 +15,9 @@ class TodosController < ApplicationController
   end
 
   def index
-
-    if params[:search]
-      @todos = Todo.search(params[:search])
-    else
-      if params[:order] == 'created'
-      @todos = Todo.reorder("created_at ASC")
-      elsif params[:order] == 'deadline'
-      @todos = Todo.reorder("deadline_at ASC")
-      else
-      @todos = Todo.all
-      end
-    end
-    # @todos.each do |todo|
-    #   next if todo.deadline_at.nil? && !todo.done
-    #   if todo.deadline_at.to_i < Time.now.to_i
-    #     p todo.deadline_at
-    #     todo.update_attribute(:status, 'pending')
-    #     todo.save
-    #   end
-    # end
-
+    @q = Todo.ransack(params[:q])
+    @todos = @q.result(distinct: true).page params[:page]
   end
-
-
-
-
 
   def edit
     @todo = Todo.find(params[:id])
@@ -49,7 +26,7 @@ class TodosController < ApplicationController
   def update
     @todo = Todo.find(params[:id])
     if @todo.update_attributes(todo_params)
-      flash[:success] = "task updated"
+      flash[:success] = 'task updated'
       redirect_to todos_path
     else
       render 'edit'
@@ -59,7 +36,7 @@ class TodosController < ApplicationController
 
   def destroy
     Todo.find(params[:id]).destroy
-    flash[:danger] = "task done"
+    flash[:danger] = 'task done'
     redirect_to todos_path
   end
 
@@ -84,7 +61,7 @@ class TodosController < ApplicationController
 
 private
   def todo_params
-    params.require(:todo).permit(:content, :title, :deadline_at, :status, :search)
+    params.require(:todo).permit(:content, :title, :deadline_at, :status, :priority)
   end
 
 end
