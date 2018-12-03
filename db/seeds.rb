@@ -16,3 +16,10 @@
   )
 end
 
+Todo.create!(
+    title: Faker::Commerce.product_name,
+    content: Faker::Lorem.sentence(5),
+    deadline_at: 10.seconds.from_now,
+    priority: 3,
+    status: "not started"
+)

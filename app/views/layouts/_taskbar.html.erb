@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2E2F30">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= sort_link @q, :created_at, "created" %>
+      </li>
+      <li class="nav-item">
+      <%= sort_link @q, :deadline_at, "deadline"  , default_order: :asc %>
+      </li>
+      <li class="nav-item">
+        <%= sort_link @q, :priority, "priority"  , default_order: :asc %>
+      </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+      <%= search_form_for @q do |f| %>
+        <%= f.search_field :title_or_content_cont ,placeholder: "title or content", class: "taskbar-search"%>
+        <%= f.submit%>
+      <% end %>
+    </div>
+  </div>
+
+</nav>

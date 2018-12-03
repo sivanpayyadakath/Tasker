@@ -1,32 +1,17 @@
-
-<h1> <%= t('.title') %></h1>
-
 <div class="container">
   <div class="row">
     <div class="col-sm-6 offset-md-6">
 
-      <%= sort_link @q, :created_at, "created" %>
-      <%= sort_link @q, :deadline_at, "deadline"  , default_order: :asc %>
-      <%= sort_link @q, :priority, "priority"  , default_order: :asc %>
-
-      <%= search_form_for @q do |f| %>
-        <%= f.search_field :title_or_content_cont ,placeholder: "title or content"%>
-        <%= f.submit %>
-      <% end %>
-
-      <% if I18n.locale == I18n.default_locale %>
-        <%= link_to "日本語", { :locale=>'ja'} %>
-      <% else %>
-        <%= link_to "English", { :locale=>'en' } %>
-      <% end %>
+      <%#= sort_link @q, :created_at, "created" %>
+      <%#= sort_link @q, :deadline_at, "deadline"  , default_order: :asc %>
+      <%#= sort_link @q, :priority, "priority"  , default_order: :asc %>
     </div>
   </div>
-
 
 
   <% @todos.each do |todo|%>
      <%= render todo %>
    <% end %>
-  <%= paginate @todos %>
+  <div class="paginate-style text-center"><%= paginate @todos %></div>
 
 </div>
