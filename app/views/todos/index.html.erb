@@ -21,7 +21,12 @@
       <% end %>
     </div>
   </div>
+
+
+
   <% @todos.each do |todo|%>
      <%= render todo %>
    <% end %>
+  <%= paginate @todos %>
+
 </div>

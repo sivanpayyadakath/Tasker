@@ -16,7 +16,7 @@ class TodosController < ApplicationController
 
   def index
     @q = Todo.ransack(params[:q])
-    @todos = @q.result(distinct: true)
+    @todos = @q.result(distinct: true).page params[:page]
   end
 
   def edit
