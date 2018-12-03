@@ -17,13 +17,6 @@ class TodosController < ApplicationController
   def index
     @q = Todo.ransack(params[:q])
     @todos = @q.result(distinct: true)
-    # @todos = if params[:order] == 'created'
-    #   Todo.reorder('created_at ASC')
-    #          elsif params[:order] == 'deadline'
-    #   Todo.reorder('deadline_at ASC')
-    #          else
-    #   Todo.all
-    #          end
   end
 
   def edit
@@ -68,7 +61,7 @@ class TodosController < ApplicationController
 
 private
   def todo_params
-    params.require(:todo).permit(:content, :title, :deadline_at, :status, :search)
+    params.require(:todo).permit(:content, :title, :deadline_at, :status, :priority)
   end
 
 end

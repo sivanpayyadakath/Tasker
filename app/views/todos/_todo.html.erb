@@ -2,7 +2,15 @@
   <div class="card-<%= todo.status %>">
     <div class="card"  style="width: 20rem; height: 20rem">
       <div class="card-body card">
-        <h5 class="card-title"><%= todo.title %></h5>
+        <h5 class="card-title"><%= todo.title %> <span class="badge">
+          <%if todo.priority == '3' %>
+               low
+            <% elsif todo.priority == '2' %>
+               medium
+            <% else %>
+                high
+            <% end %>
+            </span></h5>
         <h6 class="card-subtitle mb-2 text-muted">created <%= time_ago_in_words(todo.created_at) %> ago</h6>
         <% if !todo.done && todo.deadline_at %>
           <% if todo.deadline_at.to_i > Time.now.to_i %>
