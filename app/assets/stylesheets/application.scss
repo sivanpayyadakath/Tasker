@@ -9,9 +9,10 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
-
+*= require bootstrap-datepicker
  */
 //"bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -27,4 +28,33 @@
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+
+.card-not.started{
+  background-color: lightgray;
+  }
+
+
+.card-underway{
+  background-color: lightblue;
+  }
+
+
+.card-completed{
+  background-color: lightgreen;
+  }
+
+
+
+.label-not.started{
+  color: blueviolet;
+}
+
+.label-underway{
+  color:blue;
+}
+
+.label-completed{
+  color: green;
 }

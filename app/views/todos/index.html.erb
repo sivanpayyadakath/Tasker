@@ -7,13 +7,13 @@
       <p> sort by
         <%= link_to "default", todos_path(order: 'all') %>
         <%= link_to "orderbycreated", todos_path(order: 'created')%>
-        <%#= link_to "orderbytitle", todos_path(order: 'title')%>
+        <%= link_to "orderbydeadline", todos_path(order: 'deadline')%>
       </p>
     </div>
     <div>
 
       <%= form_tag(todos_path, method: :get) do %>
-        <%= text_field_tag :search, params[:search]%>
+        <%= text_field_tag :search, params[:search], placeholder: "search here"%>
         <%= submit_tag 'Search' %>
       <% end %>
 
