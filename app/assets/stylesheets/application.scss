@@ -1,4 +1,5 @@
 /*
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,8 +14,8 @@
  */
 //"bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -33,17 +34,17 @@
 
 .card-not.started{
   background-color: lightgray;
-  }
+}
 
 
 .card-underway{
   background-color: lightblue;
-  }
+}
 
 
 .card-completed{
   background-color: lightgreen;
-  }
+}
 
 
 
@@ -76,8 +77,8 @@
     position: relative;
   }
   .brand {
-    position: absolute;
-    left: 40%;
+    //position: absolute;
+    //left: 40%;
     //margin-left: -50px !important;  /* 50% of your logo width */
     display: block;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
@@ -96,9 +97,9 @@
     margin-top: 10px;
   }
 }
-  .paginate-style{
-    align-items: center;
-  }
+.paginate-style{
+  align-items: center;
+}
 
 
 
@@ -108,4 +109,8 @@ footer{
     float: right;
     margin: 10px 20px;
   }
+}
+
+.create-icon{
+  color: #337ab7;
 }

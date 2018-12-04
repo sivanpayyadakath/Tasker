@@ -1,13 +1,17 @@
-<h1>Add a new task</h1>
-<%= form_for @todo do|f| %>
-  <%= f.label :title  %>
-  <%= f.text_field :title , placeholder: "provide a title" %>
-  <%= f.label :content %>
-  <%= f.text_area :content , placeholder: "new task" %>
-  <%= render 'shared/error_messages' , object:@todo %>
-  <%= f.label :deadline_at %>
-  <%= f.text_field :deadline_at , "data-provide" => 'datepicker', data: { date_format: 'yyyy/mm/dd' } %>
-  <%= f.hidden_field :status, :value => 'not started' %>
-  <%= f.select :priority, [["low",3], ["medium",2] , ["high",1]] %>
-  <%= f.submit "post" %>
-<% end %>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Add a new task</h1>
+    <%= form_for @todo do|f| %>
+      <%= f.label :title  %>
+      <%= f.text_field :title , placeholder: "provide a title" , class: "form-control" %>
+      <%= f.label :content %>
+      <%= f.text_area :content , placeholder: "new task" , class: "form-control" %>
+      <%= render 'shared/error_messages' , object:@todo %>
+      <%= f.label :deadline_at %>
+      <%= f.text_field :deadline_at , "data-provide" => 'datepicker', data: { date_format: 'yyyy/mm/dd' }  %>
+      <%= f.hidden_field :status, :value => 'not started'%>
+      <%= f.select :priority, [["low",3], ["medium",2] , ["high",1]] %>
+      <%= f.submit "post" ,  class: "btn btn-primary form-control" %>
+    <% end %>
+  </div>
+</div>
