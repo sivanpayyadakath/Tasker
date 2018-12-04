@@ -6,7 +6,7 @@
         <%= sort_link @q, :created_at, "created" %>
       </li>
       <li class="nav-item">
-      <%= sort_link @q, :deadline_at, "deadline"  , default_order: :asc %>
+        <%= sort_link @q, :deadline_at, "deadline"  , default_order: :asc %>
       </li>
       <li class="nav-item">
         <%= sort_link @q, :priority, "priority"  , default_order: :asc %>
@@ -19,5 +19,4 @@
       <% end %>
     </div>
   </div>
-
 </nav>

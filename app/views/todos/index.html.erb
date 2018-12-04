@@ -1,14 +1,15 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-6 offset-md-6">
 
-      <%#= sort_link @q, :created_at, "created" %>
-      <%#= sort_link @q, :deadline_at, "deadline"  , default_order: :asc %>
-      <%#= sort_link @q, :priority, "priority"  , default_order: :asc %>
-    </div>
+  <%= render 'taskbar' %>
+
+  <div class="row text-center">
+    <%= link_to new_todo_path, class: 'btn btn-default create-icon' do %>
+      <span class="glyphicon glyphicon-plus "></span>
+      Create new Task
+    <% end %>
   </div>
 
-
+  <div class="paginate-style text-center"><%= paginate @todos %></div>
   <% @todos.each do |todo|%>
      <%= render todo %>
    <% end %>
