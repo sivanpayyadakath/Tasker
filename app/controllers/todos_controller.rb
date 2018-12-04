@@ -1,33 +1,39 @@
 class TodosController < ApplicationController
 
   def new
-    @todo = Todo.new
+    @user = User.find(params[:user_id])
+    @todo = @user.todos.new
   end
 
   def create
-    @todo = Todo.new(todo_params)
+    @user = User.find(params[:user_id])
+    @todo = @user.todos.create(todo_params)
     if @todo.save
       flash[:success] = 'new task  created'
-      redirect_to todos_path
+      redirect_to user_todos_path
     else
       render 'new'
     end
   end
 
   def index
-    @q = Todo.ransack(params[:q])
-    @todos = @q.result(distinct: true).page params[:page]
+    @user = User.find(params[:user_id])
+    @todos = @user.todos
+    # @q = User.includes(:todos).ransack(params[:q])
+    # @todos = @q.result(distinct: true).page params[:page]
   end
 
   def edit
-    @todo = Todo.find(params[:id])
+    @user = User.find(params[:user_id])
+    @todo = @user.todos.find(params[:id])
   end
 
   def update
-    @todo = Todo.find(params[:id])
+    @user = User.find(params[:user_id])
+    @todo = @user.todos.find(params[:id])
     if @todo.update_attributes(todo_params)
       flash[:success] = 'task updated'
-      redirect_to todos_path
+      redirect_to user_todos_path
     else
       render 'edit'
     end
@@ -35,26 +41,28 @@ class TodosController < ApplicationController
 
 
   def destroy
-    Todo.find(params[:id]).destroy
+    @user = User.find(params[:user_id])
+    @user.todos.find(params[:id]).destroy
     flash[:danger] = 'task done'
-    redirect_to todos_path
+    redirect_to user_todos_path
   end
 
 
   def task_completed
-    puts @todo = Todo.find(params[:id])
+    @user = User.find(params[:user_id])
+    @todo = @user.todos.find(params[:id])
     if @todo.update_attribute(:done, true)
       @todo.update_attribute(:completed_at, Time.now)
       @todo.update_attribute(:status, 'completed')
-      redirect_to todos_path
+      redirect_to user_todos_path
     end
   end
 
   def task_started
-    puts @todo = Todo.find(params[:id])
+    @user = User.find(params[:user_id])
+    @todo = @user.todos.find(params[:id])
     if @todo.update_attribute(:status, 'underway')
-      # @todo.update_attribute(:started_at, Time.now)
-      redirect_to todos_path
+      redirect_to user_todos_path
     end
   end
 

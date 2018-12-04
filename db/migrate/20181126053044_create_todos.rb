@@ -5,5 +5,6 @@ class CreateTodos < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :todos, :user_id
   end
 end

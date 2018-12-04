@@ -1,5 +1,5 @@
 <div class="form">
-<%= form_for @todo do|f| %>
+<%= form_for ([@user,@todo]) do|f| %>
     <%= f.label :title %>
     <%= f.text_field :title , placeholder: "provide a title" %>
     <%= f.label :content %>
