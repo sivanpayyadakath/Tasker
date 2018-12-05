@@ -3,7 +3,7 @@
   <%= render 'taskbar' %>
 
   <div class="row text-center">
-    <%= link_to new_todo_path, class: 'btn btn-default create-icon' do %>
+    <%= link_to new_user_todo_path, class: 'btn btn-default create-icon' do %>
       <span class="glyphicon glyphicon-plus "></span>
       Create new Task
     <% end %>
@@ -11,8 +11,8 @@
 
   <div class="paginate-style text-center"><%= paginate @todos %></div>
   <% @todos.each do |todo|%>
-     <%= render todo %>
-   <% end %>
+    <%= render todo %>
+  <% end %>
   <div class="paginate-style text-center"><%= paginate @todos %></div>
 
 </div>

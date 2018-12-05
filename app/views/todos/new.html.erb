@@ -1,7 +1,7 @@
 <div class="container">
   <div class="jumbotron">
     <h1>Add a new task</h1>
-    <%= form_for @todo do|f| %>
+    <%= form_with model: ([@user, @todo]) do|f| %>
       <%= f.label :title  %>
       <%= f.text_field :title , placeholder: "provide a title" , class: "form-control" %>
       <%= f.label :content %>

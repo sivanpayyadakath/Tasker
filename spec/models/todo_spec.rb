@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Todo, type: :model do
-  #let(:todo) { FactoryBot.create(:todo) }
+
+  let(:todo) { FactoryBot.create(:todo) }
 
   it 'is valid with valid attributes' do
     expect(FactoryBot.build(:todo)).to be_valid

@@ -36,6 +36,9 @@ gem 'rails-i18n'
 gem 'bootstrap-datepicker-rails', '>= 0.6.21'
 gem 'ransack'
 gem 'kaminari'
+gem 'bcrypt',         '3.1.12'
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
 # gem 'sass-rails', '>= 3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -59,6 +62,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
+  gem 'fog', '1.42'
 end
 
 group :production do

@@ -4,9 +4,10 @@ class Todo < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   validate :deadline_at_cannot_be_in_the_past
   paginates_per 9
+  belongs_to :user
 
   def deadline_at_cannot_be_in_the_past
-    if deadline_at < Time.now
+    if deadline_at.to_i < Time.now.to_i
     errors.add(:deadline_at, "can't be in the past")
     end
   end

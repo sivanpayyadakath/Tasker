@@ -105,6 +105,7 @@
 
 footer{
   color: #BBBBBB;
+  margin-top: 30px;
   p{
     float: right;
     margin: 10px 20px;
@@ -113,4 +114,10 @@ footer{
 
 .create-icon{
   color: #337ab7;
+}
+
+.error_msg{
+  color: #B00100;
+  list-style: none;
+
 }
