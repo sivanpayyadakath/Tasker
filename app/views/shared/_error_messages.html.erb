@@ -1,7 +1,8 @@
-<div>
+<div class = "error_msg">
   <% if object.errors.any? %>
-    <% object.errors.full_messages.each do |msg| %>
-      <%= msg %>
-    <% end %>
+    <%# object.errors.full_messages.each do |msg| %>
+      <%#= msg %>
+    <%# end %>
+    The form contains <%= pluralize(object.errors.count, "error") %>.
   <% end %>
 </div>
