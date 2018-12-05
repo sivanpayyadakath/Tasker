@@ -22,9 +22,14 @@
         <span class="label label-pill label-<%= todo.status %>"><%= todo.status %></span>
         <p class="card-text"><%= todo.content %></p>
         <% if !todo.done %>
-          <%= link_to "edit" , edit_user_todo_path(@user,todo), :class => "card-link" %>
-          <%= link_to "start" , task_started_user_todo_path(@user,todo.id), method: :patch %>
-          <%= link_to "completed" , task_completed_user_todo_path(@user,todo.id), method: :patch %>
+          <% if todo.deadline_at.to_i > Time.now.to_i %>
+            <%= link_to "edit" , edit_user_todo_path(@user,todo), :class => "card-link" %>
+          <% end %>
+          <% if todo.status == 'not started' %>
+            <%= link_to "start" , task_started_user_todo_path(@user,todo.id), method: :patch %>
+          <% else %>
+            <%= link_to "completed" , task_completed_user_todo_path(@user,todo.id), method: :patch %>
+            <% end %>
         <% end %>
         <%= link_to "remove" , [@user,todo] ,  method: :delete , :class => "card-link" , data: { confirm: "are you sure?" } %>
       </div>

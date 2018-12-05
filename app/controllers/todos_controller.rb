@@ -30,9 +30,7 @@ class TodosController < ApplicationController
   def update
     @user = User.find(params[:user_id])
     @todo = @user.todos.find(params[:id])
-    if @todo
-      @todo.update_attributes(todo_params)
-
+    if @todo.update_attributes(todo_params)
       flash[:success] = 'task updated'
       redirect_to user_todos_path
     else
