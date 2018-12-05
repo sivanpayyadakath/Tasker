@@ -5,6 +5,8 @@
     <%= f.label :content %>
     <%= f.text_area :content , placeholder: "add new task" %>
     <%= f.select :priority, [["low",3], ["medium",2] , ["high",1]] %>
+    <%#= f.hidden_field :status%>
+    <%#= f.hidden_field :deadline_at %>
   <%= f.submit "save changes" %>
 <% end %>
 </div>

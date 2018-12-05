@@ -18,9 +18,8 @@ class TodosController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @todos = @user.todos
-    # @q = User.includes(:todos).ransack(params[:q])
-    # @todos = @q.result(distinct: true).page params[:page]
+    @q = @user.todos.ransack(params[:q])
+    @todos = @q.result(distinct: true).page params[:page]
   end
 
   def edit
@@ -31,7 +30,9 @@ class TodosController < ApplicationController
   def update
     @user = User.find(params[:user_id])
     @todo = @user.todos.find(params[:id])
-    if @todo.update_attributes(todo_params)
+    if @todo
+      @todo.update_attributes(todo_params)
+
       flash[:success] = 'task updated'
       redirect_to user_todos_path
     else

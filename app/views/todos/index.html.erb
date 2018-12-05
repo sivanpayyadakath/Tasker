@@ -1,6 +1,6 @@
 <div class="container">
 
-  <%#= render 'taskbar' %>
+  <%= render 'taskbar' %>
 
   <div class="row text-center">
     <%= link_to new_user_todo_path, class: 'btn btn-default create-icon' do %>
@@ -9,15 +9,10 @@
     <% end %>
   </div>
 
-<% @todos.each do |todo|%>
-
+  <div class="paginate-style text-center"><%= paginate @todos %></div>
+  <% @todos.each do |todo|%>
     <%= render todo %>
   <% end %>
-
-<!--  <div class="paginate-style text-center"><%#= paginate @todos %></div>-->
-  <%# @todos.each do |todo|%>
-     <%#= render 'todo' %>
-   <%# end %>
-<!--  <div class="paginate-style text-center"><%#= paginate @todos %></div>-->
+  <div class="paginate-style text-center"><%= paginate @todos %></div>
 
 </div>
