@@ -1,1 +1,2 @@
-<%= @user.name %>, <%= @user.email %>
+<%= current_user.name %>, <%= current_user.email %>
+<%= link_to "dd", user_todos_path(current_user.id) %>
