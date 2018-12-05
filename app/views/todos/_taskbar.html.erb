@@ -3,7 +3,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= sort_link @q, :created_at, "created" , { :controller => todos, action: "index" } %>
+        <%= sort_link @q, :created_at, "created" %>
       </li>
       <li class="nav-item">
         <%= sort_link @q, :deadline_at, "deadline"  , default_order: :asc %>
