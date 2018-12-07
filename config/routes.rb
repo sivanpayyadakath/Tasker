@@ -21,9 +21,14 @@ Rails.application.routes.draw do
 
   get '/admin', to: 'users#index'
 
+  get '/404', to: 'errors#not_found'
+
+  get '/500', to: 'errors#internal_server_error'
+
+
   resources :users do
-      patch :make_admin
-      patch :remove_admin
+    patch :make_admin
+    patch :remove_admin
     resources :todos do
       member do
         patch :task_completed
