@@ -3,12 +3,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav navbar-right">
 
-
       <% if logged_in? %>
+        <li><%= link_to "admin", admin_path %></li>
+        <li><%= link_to "Home", user_todos_path(current_user) %></li>
         <li><%= link_to "Profile", current_user %></li>
-        <li><%= link_to "Settings", '#' %></li>
+        <li><%= link_to "Settings", edit_user_path(current_user) %></li>
          <li><%= link_to "logout" , logout_path , method: :delete %></li>
-        <% else %>
+      <% else %>
         <li><%= link_to "Signup", signup_path %></li>
         <li><%= link_to "login", login_path %></li>
        <% end %>

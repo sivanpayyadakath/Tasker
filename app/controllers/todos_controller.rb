@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  before_action :require_login
+  #before_action :admin_user, only: :index
 
   def new
     @user = User.find(params[:user_id])
@@ -17,7 +19,7 @@ class TodosController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:user_id])
+    @user = current_user
     @q = @user.todos.ransack(params[:q])
     @todos = @q.result(distinct: true).page params[:page]
   end
@@ -70,6 +72,17 @@ private
   def todo_params
     params.require(:todo).permit(:content, :title, :deadline_at, :status, :priority)
   end
+
+  def require_login
+    if current_user
+      @user = @current_user
+    else
+      flash[:danger] = "please log in"
+      redirect_to login_url
+    end
+  end
+
+
 
 end
 
