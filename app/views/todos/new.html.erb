@@ -1,17 +1,21 @@
 <div class="container">
   <div class="jumbotron">
     <h1>Add a new task</h1>
-    <%= form_with model: ([@user, @todo]) do|f| %>
-      <%= f.label :title  %>
+    <%= form_with model: ([@user, @todo]), remote: false do|f| %>
+      <%= f.label :title , class: "form-control"  %>
       <%= f.text_field :title , placeholder: "provide a title" , class: "form-control" %>
-      <%= f.label :content %>
+      <%= f.label :content, class: "form-control"  %>
       <%= f.text_area :content , placeholder: "new task" , class: "form-control" %>
       <%= render 'shared/error_messages' , object:@todo %>
-      <%= f.label :deadline_at %>
+      <%= f.label :deadline_at, class: "form-control"  %>
       <%= f.text_field :deadline_at , "data-provide" => 'datepicker', data: { date_format: 'yyyy/mm/dd' }  %>
       <%= f.hidden_field :status, :value => 'not started'%>
-      <%= f.select :priority, [["low",3], ["medium",2] , ["high",1]] %>
+      <%= f.label :priority, class: "form-control"  %>
+      <%= f.select :priority, [["low",3], ["medium",2] , ["high",1]], class: "form-control"  %>
+      <%= f.label :tags, 'Add hashtags' , class: "form-control" %>
+      <%= text_area_tag :tags, nil, placeholder: "hashtags" , class: "form-control" %>
       <%= f.submit "post" ,  class: "btn btn-primary form-control" %>
+
     <% end %>
   </div>
 </div>

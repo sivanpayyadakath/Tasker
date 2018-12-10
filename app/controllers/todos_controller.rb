@@ -10,19 +10,38 @@ class TodosController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @todo = @user.todos.create(todo_params)
+    @tags = params[:tags].scan(/#\w+/)
+
+    @tags.each do |tag|
+      tag.slice!(0)
+      if Tag.exists?(name: tag)
+        obj_tag = Tag.find_by(name: tag)
+        unless @todo.tags.include?(obj_tag)
+          @todo.tags << obj_tag
+        end
+      else
+        @todo.tags.create(name: tag)
+      end
+    end
+
     if @todo.save
       flash[:success] = 'new task  created'
-      redirect_to user_todos_path
-    else
-      render 'new'
+       redirect_to user_todos_path
+     else
+       render 'new'
     end
-  end
+
+   end
 
   def index
     @user = current_user
     @q = @user.todos.ransack(params[:q])
     @todos = @q.result(distinct: true).page params[:page]
+    # if params[:search]
+    #   @tags = Tag.all.where('name LIKE ?', "%#{params[:search]}")
+    #   @todos = @user.todos
   end
+
 
   def edit
     @user = User.find(params[:user_id])
@@ -62,13 +81,20 @@ class TodosController < ApplicationController
   def task_started
     @user = User.find(params[:user_id])
     @todo = @user.todos.find(params[:id])
-    if @todo.update_attribute(:status, 'underway')
-      redirect_to user_todos_path
-    end
+    redirect_to user_todos_path if @todo.update_attribute(:status, 'underway')
   end
 
 
+  # def search
+  #   if search
+  #     .where(['name LIKE ?', '%#{search}'])
+  #   else
+  #     all
+  #   end
+  # end
+
 private
+
   def todo_params
     params.require(:todo).permit(:content, :title, :deadline_at, :status, :priority)
   end
@@ -81,8 +107,6 @@ private
       redirect_to login_url
     end
   end
-
-
 
 end
 

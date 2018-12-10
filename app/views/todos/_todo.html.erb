@@ -33,6 +33,9 @@
         <% end %>
         <%= link_to "remove" , [@user,todo] ,  method: :delete , :class => "card-link" , data: { confirm: "are you sure?" } %>
       </div>
+      <% todo.tags.each do |t| %>
+        #<%= t.name  %>
+      <% end %>
     </div>
   </div>
 </div>
