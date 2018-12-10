@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e4d0854-1f1c-4d07-9a6f-12eabd8375ea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/todos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/todos_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/todo.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/todo.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/todos/_taskbar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/todos/_taskbar.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/todos/_todo.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/todos/_todo.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/todos/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/todos/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/todos/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/todos/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20181205041613_add_picture_to_users.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20181205062635_remove_picture_from_user.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -64,7 +54,7 @@
           <entry key="js" value="11" />
           <entry key="lock" value="1" />
           <entry key="pid" value="1" />
-          <entry key="rb" value="222" />
+          <entry key="rb" value="224" />
           <entry key="rspec" value="3" />
           <entry key="scss" value="21" />
           <entry key="yml" value="14" />
@@ -78,7 +68,7 @@
           <entry key="JavaScript" value="11" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="RHTML" value="148" />
-          <entry key="Ruby" value="241" />
+          <entry key="Ruby" value="243" />
           <entry key="SCSS" value="21" />
           <entry key="YAML" value="14" />
         </counts>
@@ -91,7 +81,7 @@
           <entry key="erb" value="8157" />
           <entry key="html" value="1" />
           <entry key="js" value="6" />
-          <entry key="rb" value="14691" />
+          <entry key="rb" value="14695" />
           <entry key="rspec" value="24" />
           <entry key="scss" value="1190" />
           <entry key="yml" value="353" />
@@ -105,7 +95,7 @@
           <entry key="JavaScript" value="6" />
           <entry key="PLAIN_TEXT" value="24" />
           <entry key="RHTML" value="8157" />
-          <entry key="Ruby" value="14824" />
+          <entry key="Ruby" value="14828" />
           <entry key="SCSS" value="1190" />
           <entry key="YAML" value="353" />
         </counts>
@@ -123,11 +113,47 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/todos_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+            <state relative-caret-position="512">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/application.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="574">
+              <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/errors_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -154,8 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/fixtures/users.yml" />
-        <option value="$PROJECT_DIR$/test/models/user_test.rb" />
         <option value="$PROJECT_DIR$/test/models/todo_test.rb" />
         <option value="$PROJECT_DIR$/spec/factories/todo.rb" />
         <option value="$PROJECT_DIR$/spec/factories/users.rb" />
@@ -184,7 +208,6 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/errors_controller.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/views/errors/not_found.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20181207085031_remove_avatar_from_users.rb" />
@@ -205,6 +228,9 @@
         <option value="$PROJECT_DIR$/app/views/todos/_taskbar.html.erb" />
         <option value="$PROJECT_DIR$/app/views/todos/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/todos_controller.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/config/application.rb" />
+        <option value="$PROJECT_DIR$/config/environments/development.rb" />
       </list>
     </option>
   </component>
@@ -266,6 +292,17 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="todos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tasker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tasker" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tasker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tasker" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -422,12 +459,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186775000" />
+    <option name="totallyTimeSpent" value="186962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-350" y="-1080" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11341853" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11341853" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -440,7 +478,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49840257" visible="true" weight="0.27890468" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840257" visible="true" weight="0.27890468" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50159746" side_tool="true" weight="0.20182556" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3296146" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -456,20 +494,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20181206025948_add_remember_digest_to_users.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sessions/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/users_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -529,8 +553,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="375">
+          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -549,8 +573,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/errors_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="30">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -617,13 +641,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20181210010752_create_hashtags.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20181210010752_create_hashtags.rb" />
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-356" />
@@ -636,13 +654,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/hashtag.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/hashtag.rb" />
     <entry file="file://$PROJECT_DIR$/db/migrate/20181210011800_create_hashtags.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -755,13 +767,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/pids/server.pid">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/pids/server.pid" />
     <entry file="file://$PROJECT_DIR$/app/controllers/todos_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+        <state relative-caret-position="512">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
         </state>
       </provider>
     </entry>
