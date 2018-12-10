@@ -21,9 +21,9 @@ Rails.application.routes.draw do
 
   get '/admin', to: 'users#index'
 
-  get '/404', to: 'errors#not_found'
+  get '/404', to: 'errors#not_found', :via => :all
 
-  get '/500', to: 'errors#internal_server_error'
+  get '/500', to: 'errors#internal_server_error', :via => :all
 
 
   resources :users do
