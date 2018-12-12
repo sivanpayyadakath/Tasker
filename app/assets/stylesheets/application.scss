@@ -31,24 +31,41 @@
   @include box_sizing;
 }
 
-
-.card-not.started{
-  background-color: lightgray;
+body{
+  background-image: image-url('bgg.jpg');
 }
 
-
-.card-underway{
-  background-color: lightblue;
+.card {
+  opacity: 0.9;
+  width: 100%;
+  padding: 15px 25px;
+  border: 1px solid slategrey;
+  border-radius: 5%;
+  margin: 10px 0 0 10px;
 }
+  .card-not.started {
+    background-color: orangered;
+    #background-image: image-url('bg.jpg');
+    #filter: brightness(70%);
+    filter: contrast(80%);
+  }
+
+  .card-underway {
+    background-color: cadetblue;
+    #background-image: image-url('a.jpg');
+
+  }
+
+  .card-completed {
+    background-color: palegreen;
+    opacity: 0.6;
+  }
 
 
-.card-completed{
-  background-color: lightgreen;
+.card:hover {
+  height: 45em;
+  box-shadow: 25px 25px 45px 5px rgba(0,0,0,0.5);
 }
-
-
-
-
 .label-not.started{
   color: blueviolet;
 }
@@ -77,13 +94,12 @@
     position: relative;
   }
   .brand {
-    //position: absolute;
-    //left: 40%;
-    //margin-left: -50px !important;  /* 50% of your logo width */
     display: block;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     font-size: 4em;
     margin: auto;
+    color: #337ab7;
+
   }
   ul {
     li {
@@ -95,6 +111,19 @@
   form {
     float: right;
     margin-top: 10px;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    text-transform: capitalize;
+    font-family: "Apple LiGothic";
+    font-size: 2em;
+  }
+
+  a:hover {
+    color: lightslategrey;
   }
 }
 .paginate-style{
@@ -114,10 +143,25 @@ footer{
 
 .create-icon{
   color: #337ab7;
+  margin-bottom: 10px;
+}
+
+.create-icon:hover{
+  color: #2E2F30;
+
 }
 
 .error_msg{
   color: #B00100;
   list-style: none;
 
+}
+
+input#q_title_or_content_cont.taskbar-search{
+  width: 30em;
+  font-size: 1.2em;
+}
+
+.form-control{
+  margin: 10px;
 }

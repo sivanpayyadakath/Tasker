@@ -1,7 +1,7 @@
 <div class="col-sm-4">
-  <div class="card-<%= todo.status %>">
-    <div class="card"  style="width: 20rem; height: 20rem">
-      <div class="card-body card">
+  <div class="card card-<%= todo.status %>" style="width: 36rem; height: 30rem">
+    <div>
+      <div class="card-body">
         <h5 class="card-title"><%= todo.title %> <span class="badge badge-<%= todo.priority %>">
           <%if todo.priority == '3' %>
                low
@@ -32,11 +32,15 @@
             <% end %>
         <% end %>
         <%= link_to "remove" , [@user,todo] ,  method: :delete , :class => "card-link" , data: { confirm: "are you sure?" } %>
+
+        <div>
+          <% todo.tags.each do |t| %>
+            <span class="badge"> #<%= t.name  %></span>
+          <% end %>
+        </div>
       </div>
-      <% todo.tags.each do |t| %>
-        #<%= t.name  %>
-      <% end %>
-    </div>
+      </div>
+
   </div>
 </div>
 
