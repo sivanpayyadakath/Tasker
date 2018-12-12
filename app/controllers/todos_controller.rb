@@ -36,9 +36,9 @@ class TodosController < ApplicationController
     @user = current_user
     @q = @user.todos.ransack(params[:q])
     @todos = @q.result(distinct: true).page params[:page]
-    # if params[:search]
-    #   @tags = Tag.all.where('name LIKE ?', "%#{params[:search]}")
-    #   @todos = @user.todos
+    #if params[:search]
+       #@tags = @todos.where('name LIKE ?', "%#{params[:search]}")
+    byebug
   end
 
 
