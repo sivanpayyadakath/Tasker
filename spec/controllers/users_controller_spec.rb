@@ -34,16 +34,39 @@ RSpec.describe UsersController, type: :controller do
 
     it 're-renders new if  password donot match' do
       post :create, params:  { user: { name: 'sivan' ,email: 'sivanp77@gmail.com', password: '12345678' , password_confirmation: '123456789' } }
-      expect(response).to render_template :new
+      expect(assigns).to render_template :new
     end
-
-    #
-    # it 'it logins and redirects to home' do
-    #   post :create, params:  { user: { name: 'sivan' ,email: 'sivanp77@gmail.com', password: '12345678' , password_confirmation: '123456789' } }
-    #   expect(response).to render_template :new
-    #  end
   end
 
+  #
+  # describe "GET #update" do
+  #
+  #
+  #   before(:each) do
+  #     login user
+  #     put :update, params: {user_id: user.id}
+  #     user.reload
+  #   end
+  #
+  #   it 'update action' do
+  #     patch :update , params: { user: { name: 'sivan',email: 'sivanp77@gmail.com'} }
+  #     expect(assigns(:user)).to eq(user)
+  #   end
+  #
+  #
+  # end
+
+  # let(:user) { FactoryBot.create(:user) }
+  # describe " Destroy user" do
+  #   before :each do
+  #     login user
+  #   end
+  #   it "deletes the contact" do
+  #     expect {
+  #       delete :destroy, params: {user_id: user.id}
+  #       }.to change(User,:count).by(-1)
+  #     end
+  #   end
 
 
 end
