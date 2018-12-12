@@ -35,7 +35,7 @@ body{
   background-image: image-url('bgg.jpg');
 }
 
-.card {
+.todo-card {
   opacity: 0.9;
   width: 100%;
   padding: 15px 25px;
@@ -43,7 +43,8 @@ body{
   border-radius: 5%;
   margin: 10px 0 0 10px;
 }
-  .card-not.started {
+
+.card-not.started {
     background-color: orangered;
     #background-image: image-url('bg.jpg');
     #filter: brightness(70%);
@@ -57,12 +58,12 @@ body{
   }
 
   .card-completed {
-    background-color: palegreen;
+    background-color: yellowgreen;
     opacity: 0.6;
   }
 
 
-.card:hover {
+.todo-card:hover {
   height: 45em;
   box-shadow: 25px 25px 45px 5px rgba(0,0,0,0.5);
 }
@@ -164,4 +165,38 @@ input#q_title_or_content_cont.taskbar-search{
 
 .form-control{
   margin: 10px;
+}
+
+.user-list{
+  list-style: none;
+  display: inline;
+  font-size: 2em;
+}
+
+.wrapper {
+  border : 8px solid #337ab7;
+  overflow:hidden;
+  margin: 10px 0 30px;
+}
+
+.wrapper div {
+  padding: 10px;
+}
+#one {
+  float:left;
+  margin-right:20px;
+}
+#two {
+  overflow:hidden;
+  margin:10px;
+}
+
+@media screen and (max-width: 300px) {
+  #one {
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+    border-bottom:2px solid #000;
+  }
 }

@@ -17,4 +17,5 @@ class Todo < ApplicationRecord
     where("title LIKE?", "%#{search}")
   end
 
+
 end

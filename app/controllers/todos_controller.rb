@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   before_action :require_login
-  #before_action :admin_user, only: :index
+  before_action :correct_user
 
   def new
     @user = User.find(params[:user_id])
@@ -104,6 +104,14 @@ private
     else
       flash[:danger] = "please log in"
       redirect_to login_url
+    end
+  end
+
+
+  def correct_user
+    @user = User.find(params[:user_id])
+    if !current_user?(@user)
+      redirect_to user_todos_path(current_user)
     end
   end
 
