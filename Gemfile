@@ -39,6 +39,7 @@ gem 'kaminari'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
+
 # gem 'sass-rails', '>= 3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -52,6 +53,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8', '>= 3.8.1'
   gem 'factory_bot_rails', '~> 4.11', '>= 4.11.1'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
+  #gem 'rspec-rails', '~> 3.1.0'
+  #gem 'factory_girl_rails', '~> 4.4.1'
 end
 
 group :development do
@@ -71,3 +74,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+group :test do
+  gem 'database_cleaner', '~> 1.3.0'
+  gem 'launchy', '~> 2.4.2'
+end
+

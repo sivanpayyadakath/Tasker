@@ -30,8 +30,7 @@ class TodosController < ApplicationController
      else
        render 'new'
     end
-
-   end
+  end
 
   def index
     @user = current_user
