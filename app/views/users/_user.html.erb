@@ -1,11 +1,15 @@
-<div>
-  <%= link_to user.name, user_todos_path(user) %>
+<div class="row">
+<li class="user-list">
+  <%#= link_to user.name, user_todos_path(user) %>
+  <%= gravatar_for user %>
+  <%= user.name %>
   (<%= user.todos.count %>)
   <% if user.admin? && !current_user?(user) && current_user.admin? %>
     <%= link_to "remove admin" , user_remove_admin_path(user.id), method: :patch %>
   <% end %>
   <% if !current_user?(user) && !user.admin? && current_user.admin?  %>
     <%= link_to "make admin" , user_make_admin_path(user.id), method: :patch %>
-    <%= link_to "delete" , user , method: :delete , data: { confirm: "You sure?" } %>
+    <%= link_to "delete " , user , method: :delete , data: { confirm: "You sure?" } %>
   <% end %>
+</li>
 </div>

@@ -2,3 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.card {
+  opacity: 0.9;
+  width: 100%;
+  padding: 15px 25px;
+  border: 1px solid slategrey;
+  border-radius: 5%;
+  margin: 10px 0 0 10px;
+}
+.card-not.started {
+  background-color: darkseagreen;
+  #background-image: image-url('bg.jpg');
+}
+
+.card-underway {
+  background-color: lightblue;
+  #background-image: image-url('a.jpg');
+}
+
+.card-completed {
+  background-color: lightgreen;
+}
+
+
+.card:hover {
+  height: 45em;
+  box-shadow: 25px 25px 45px 5px rgba(0,0,0,0.5);
+}
+.label-not.started{
+  color: blueviolet;
+}
+
+.label-underway{
+  color:blue;
+}
+
+.label-completed{
+  color: green;
+}
+
+.badge-3{
+  background-color: green;
+}
+.badge-2{
+  background-color: blue;
+}
+
+.badge-1{
+  background-color: red;
+}

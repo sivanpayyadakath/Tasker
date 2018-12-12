@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="card" id="one">
+    <%= gravatar_for current_user %>
+    <div class="card-body">
+      <h5 class="card-title"><%= current_user.name %></h5>
+      <p class="card-text"><%= current_user.email %></p>
+      <p class="card-text"><small class="text-muted"><%= current_user.todos.count %> tasks</small></p>
+    </div>
+  </div>
+
+  <div class="card" id="two">
+    <div>
+      Tasks pending
+    </div>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= current_user.todos.where.not(done:true).count.to_f / current_user.todos.count * 100 %>%" aria-valuenow="<%= current_user.todos.where.not(done:true).count %>" aria-valuemin="0" aria-valuemax="<%= current_user.todos.count %>"></div>
+    </div>
+    <div>Tasks completed</div>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= current_user.todos.where.not(done:false).count.to_f / current_user.todos.count * 100 %>%" aria-valuenow="<%= current_user.todos.where.not(done:false).count %>" aria-valuemin="0" aria-valuemax="<%= current_user.todos.count %>"></div>
+    </div>
+
+  </div>
+
+</div>
