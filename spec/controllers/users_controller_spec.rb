@@ -38,35 +38,13 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  #
-  # describe "GET #update" do
-  #
-  #
-  #   before(:each) do
-  #     login user
-  #     put :update, params: {user_id: user.id}
-  #     user.reload
-  #   end
-  #
-  #   it 'update action' do
-  #     patch :update , params: { user: { name: 'sivan',email: 'sivanp77@gmail.com'} }
-  #     expect(assigns(:user)).to eq(user)
-  #   end
-  #
-  #
-  # end
+  describe " Destroy user" do
+    it "deletes the user" do
+      user = FactoryBot.create(:user)
+      expect{user.destroy}.to change { User.count }.by(-1)
+      end
+    end
 
-  # let(:user) { FactoryBot.create(:user) }
-  # describe " Destroy user" do
-  #   before :each do
-  #     login user
-  #   end
-  #   it "deletes the contact" do
-  #     expect {
-  #       delete :destroy, params: {user_id: user.id}
-  #       }.to change(User,:count).by(-1)
-  #     end
-  #   end
 
 
 end
