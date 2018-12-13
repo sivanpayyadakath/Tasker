@@ -36,9 +36,8 @@ class TodosController < ApplicationController
     @user = current_user
     @q = @user.todos.ransack(params[:q])
     @todos = @q.result(distinct: true).page params[:page]
-    #if params[:search]
-       #@tags = @todos.where('name LIKE ?', "%#{params[:search]}")
-    byebug
+    @todos = Todo.joins(:tags).where('tags.name LIKE ?', params[:search] + '%').page params[:page] unless params[:q] if params[:search]
+
   end
 
 

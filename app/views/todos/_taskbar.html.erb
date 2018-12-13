@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: steelblue">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: steelblue; border: 4px solid black;">
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -12,10 +12,21 @@
         <%= sort_link @q, :priority, "priority"  , default_order: :asc %>
       </li>
     </ul>
+    <div>
+      <%= search_form_for ([@user,@q]) do |f| %>
+        <p>
+          <%= text_field_tag :search, params[:search] ,placeholder: "Search by hashtag" %>
+          <%#= submit_tag "Search", name:  "nil" %>
+          <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-search " %>
+        </p>
+      <% end %>
+    </div>
+
     <div class="form-inline my-2 my-lg-0">
       <%= search_form_for ([@user,@q]) do |f| %>
-        <%= f.search_field :title_or_content_cont ,placeholder: "title or content", class: "taskbar-search"%>
-        <%= f.submit%>
+        <%= f.search_field :title_or_content_cont ,placeholder: "Search by title or content", class: "taskbar-search"%>
+        <%#= f.submit%>
+        <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-search " %>
       <% end %>
     </div>
 
