@@ -9,14 +9,7 @@
       Create new Task
     <% end %>
   </div>
-<!--<div>-->
-  <%#= form_tag user_todos_path, :method => 'get' do %>
-<!--    <p>-->
-      <%#= text_field_tag :search, params[:search] %>
-      <%#= submit_tag "Search", :name => nil %>
-<!--    </p>-->
-  <%# end %>
-<!--</div>-->
+
   <div class="paginate-style text-center"><%= paginate @todos %></div>
   <% @todos.each do |todo|%>
     <%= render todo %>

@@ -1,2 +1,9 @@
-<%= current_user.name %>, <%= current_user.email %>
-<%= link_to "dd", user_todos_path(current_user.id) %>
+<div class="jumbotron">
+  <div class="card show-user" >
+    <%= gravatar_for current_user %>
+    <div class="card-body">
+      <h5 class="card-title"><%= current_user.name %></h5>
+      <p class="card-text"><%= current_user.email %></p>
+    </div>
+  </div>
+</div>
